@@ -44,4 +44,11 @@ def gen_url(v_dep,v_arr,jour_dep,trajetDirect="false"):
     
     return "https://www.oui.sncf/bons-plans/tgvmax#!/"+get_vcode(v_dep)+"/"+get_vcode(v_arr)+"/"+get_dcode(jour_dep) + "/ONE_WAY/2/12-HAPPY_CARD?onlyDirectTrains="+str(trajetDirect).lower() + "&lang=fr*"
 
-  
+def demander_args():
+    print("Saisie des paramètres pour générer l'url")
+    vdep = input("Ville de départ :")
+    varr = input("Ville d'arrivée :")
+    jour_dep_str = int("Jour de départ (AAAAMMJJ) :")
+    jour_dep = date(jour_dep_str[0:4],jour_dep_str[4:6],jour_dep_str[6:])
+
+    
