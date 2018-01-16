@@ -1,4 +1,8 @@
 from datetime import date, timedelta
+from enum import Enum
+
+
+rech={'VDEP':0,'VARR':1,'JDEP':2,'DIRTRAJ':3}
 
 def get_vcode(ville):
     """     return : le code de la Ville en question pour l'url
@@ -52,4 +56,14 @@ def demander_args():
     jour_dep = date(int(jour_dep_str[0:4]),int(jour_dep_str[4:6]),int(jour_dep_str[6:]))
     trajdir = bool(int(input("Trajets directs seulement (0/1) :")))
     return (vdep,varr,jour_dep,trajdir)
+
+def get_IdDuJour(date):
+    s= "test-day-"+str(date.year)+"-" 
+    if (date.month <10):
+        s = s+"0"
+    s= s+str(date.month) + "-"
+    if (date.day <10):
+        s = s+"0"
+    s= s+str(date.day)
     
+    return s
