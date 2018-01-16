@@ -32,7 +32,7 @@ def get_dcode(date):
 
 
 
-def gen_url(v_dep,v_arr,jour_dep,trajetDirect="false"):
+def gen_url(v_dep,v_arr,jour_dep,trajetDirect=False):
     """
     return : l'url du calendrier des bons plans en fonctions des paramètre suivants
     arg : v_dep = ville de départ textuellement (type str)
@@ -46,9 +46,10 @@ def gen_url(v_dep,v_arr,jour_dep,trajetDirect="false"):
 
 def demander_args():
     print("Saisie des paramètres pour générer l'url")
-    vdep = input("Ville de départ :")
-    varr = input("Ville d'arrivée :")
-    jour_dep_str = int("Jour de départ (AAAAMMJJ) :")
-    jour_dep = date(jour_dep_str[0:4],jour_dep_str[4:6],jour_dep_str[6:])
-
+    vdep = input("Ville de départ : ")
+    varr = input("Ville d'arrivée : ")
+    jour_dep_str = input("Jour de départ (AAAAMMJJ) : ")
+    jour_dep = date(int(jour_dep_str[0:4]),int(jour_dep_str[4:6]),int(jour_dep_str[6:]))
+    trajdir = bool(int(input("Trajets directs seulement (0/1) :")))
+    return (vdep,varr,jour_dep,trajdir)
     
