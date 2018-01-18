@@ -4,7 +4,7 @@ from gen_url import *
 from time import sleep
 
 
-recherche_par_defaut = ("Lille","Paris",date.today()+deltatime(30),True)
+recherche_par_defaut = ("Lille","Paris",date.today()+timedelta(15),True)
 recherche= recherche_par_defaut
 
 
