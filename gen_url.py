@@ -1,6 +1,6 @@
-from datetime import date, timedelta
-from enum import Enum
 
+if name=="__main__":
+    from datetime import date, timedelta 
 
 rech={'VDEP':0,'VARR':1,'JDEP':2,'DIRTRAJ':3}
 
@@ -67,3 +67,4 @@ def get_IdDuJour(date):
     s= s+str(date.day)
     
     return s
+

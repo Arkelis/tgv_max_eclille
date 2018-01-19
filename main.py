@@ -1,7 +1,12 @@
-from win10toast import ToastNotifier
-from splinter import Browser
-from gen_url import *
+from win10toast import ToastNotifier #A installer (pip)
+from splinter import Browser         #A installer (pip)
 from time import sleep
+from datetime import deltatime
+import keyboard
+from gen_url import *
+from nav import *
+from trajet import *
+from bdd import *
 
 
 recherche_par_defaut = ("Lille","Paris",date.today()+timedelta(15),True)
@@ -9,10 +14,8 @@ recherche= recherche_par_defaut
 
 
 toaster = ToastNotifier()
-#toaster.show_toast("Salut",
-#              "Salut Ca va mec!!",duration=10)
 
-browser = Browser(driver_name='chrome',**{'executable_path':'C:\Program Files (x86)\WebDriver\chromedriver.exe','headless' : False})
+browser = Browser(driver_name='chrome',**{'executable_path':'C:\Program Files (x86)\WebDriver\chromedriver.exe','headless' : True})
 
 
 if( bool(int(input("Modifier recherche par défaut ? (0/1) : ")))):
@@ -25,7 +28,7 @@ while(recherche[rech['JDEP']] > date.today()+timedelta(30)):
     print("Essayez une autre recherche !\n")
     if( bool(int(input("Modifier recherche par défaut ? (0/1) : ")))):
         recherche = demander_args()
-    
+
 
 browser.visit(gen_url(*recherche))
     
