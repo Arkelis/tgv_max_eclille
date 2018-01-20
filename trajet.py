@@ -3,7 +3,7 @@ if name == "__main__":
 
 
 
-class Trajet():
+class Trajet:
     
 
     def __init__(self,id_sncf=None ,id_bdd=None,gdep=None,garr=None,hdep=None,date=None,dur = None,option=None,nb=None):
@@ -24,10 +24,10 @@ class Trajet():
         traj_lu = Trajet()
 
     def __str__(self):
-        print("Gare de départ : " + g_dep)
-        print("Gare d'arrivée : " + g_arr)
-        print("Heure de départ :" + h_dep)
-        print("Durée de trajet :" + duree)
+        print("Gare de d?part : " + g_dep)
+        print("Gare d'arriv?e : " + g_arr)
+        print("Heure de d?part :" + h_dep)
+        print("Dur?e de trajet :" + duree)
         print("Option de trajets :" + option_trajet)
         print("Nb de places dispo :" +nb_places)
     
