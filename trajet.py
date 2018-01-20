@@ -9,18 +9,18 @@ class Trajet:
     def __init__(self, id_sncf = None, id_bdd = None, gdep = None,
                  garr = None, hdep = None, date = None,
                  dur = None, option = None, nb = None):
-        id_train_sncf = id_sncf
-        id_tj_bdd; = id_bdd
-        g_dep= gdep
-        g_arr = garr
-        d_dep = d
-        h_dep = hdep
-        duree = dur
-        option_trajet= option
-        nb_places =nb
+        self.id_train_sncf = id_sncf
+        self.id_tj_bdd; = id_bdd
+        self.g_dep= gdep
+        self.g_arr = garr
+        self.d_dep = d
+        self.h_dep = hdep
+        self.duree = dur
+        self.option_trajet= option
+        self.nb_places =nb
     
     @staticmethod
-    def lire_page(browser):
+    def lire_page(self, browser):
         liste_traj = []    
         traj_lu = Trajet()
 
