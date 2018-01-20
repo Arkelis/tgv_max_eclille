@@ -10,7 +10,7 @@ from win10toast import ToastNotifier
 import keyboard
 import ctypes
 
-def aller_a_reservation(depart, arrivee, date):
+def aller_a_reservation(depart, arrivee, date, identifiant, date_naissance):
     """Fonction qui prend en argument :
         - depart (string) : la gare de départ
         - arrivee (string) : la gare d'arrivée
@@ -33,6 +33,7 @@ touchez à rien pendant jusqu'à la notification de fin.", "Python TGV", 49)
     
     # Aller sur le site
     browser.visit("https://www.oui.sncf/")
+    time.sleep(5)
     if len(browser.find_by_id("cookie-policy-close")) != 0:
         browser.find_by_id("cookie-policy-close").click()
     if len(browser.find_by_id("js__ouibot-ancrage__close")) != 0:
@@ -57,10 +58,10 @@ touchez à rien pendant jusqu'à la notification de fin.", "Python TGV", 49)
     for e in range(4): keyboard.press_and_release('down')
     keyboard.press_and_release('enter')
     #browser.find_by_id("PASSENGER_1_CARD--option-4").click()
-    browser.find_by_id("PASSENGER_1_CARD-NUMBER-train").fill('*********')
+    browser.find_by_id("PASSENGER_1_CARD-NUMBER-train").fill(identifiant)
     keyboard.press_and_release('tab')
     keyboard.press('shift')
-    keyboard.write('12041997')
+    keyboard.write(date_naissance)
     keyboard.release('shift')
     for e in range(4): keyboard.press_and_release('left')
     keyboard.write('/')
@@ -74,13 +75,12 @@ touchez à rien pendant jusqu'à la notification de fin.", "Python TGV", 49)
     # Lancer la recherche
     # key.tap(key.K_RETURN)
     browser.click_link_by_id('vsb-booking-train-submit')
-    # time.sleep(10)
-    # browser.reload()
+    notif.show_toast("Python TGV", "Vous allez bientôt avoir accès aux billets")
+    browser.reload()
     # browser.find_by_text('TGV').first.click()    
     # time.sleep(1)
     # browser.find_by_text('Choisir ').click()
-    notif.show_toast("Python TGV", "Vous allez bientôt avoir accès aux billets")
-    input("Appuyer sur Entrée pour terminer")
+    Test = input("Appuyer sur Entrée pour terminer")
     browser.quit()
 
 ## Tests
@@ -88,19 +88,22 @@ if __name__ == '__main__':
     liste_gares = {'Paris' : 'Paris (toutes gares intramuros)', 'Limoges' :
             'Limoges Bénédictins', 'Lille' : 'Lille (toutes gares)'}
     
-    depart = 'Paris'
+    identifiant = input("Entrez votre identifiant TGVmax : ")
+    
+    date_naissance = input("Entrez votre date de naissance au format JJMMAAAA"
+                           + " sans slash ! ")
+    # depart = 'Lille'
     while depart not in liste_gares:
         depart = input("Entrer la ville de départ parmi Paris, Limoges, " +
                 "Lille : ")
     depart = liste_gares[depart]
     
-    arrivee = 'Lille'
+    # arrivee = 'Paris'
     while arrivee not in liste_gares:
         arrivee = input("Entrer la ville d'arrivée parmi Paris, Limoges, " +
                 "Lille : ")
     arrivee = liste_gares[arrivee]
         
-    # date = input("Entrer la date au format JJ/MM/AAAA :")
-    date = '18/02/2018'
-    jour = date[:2]
-    aller_a_reservation(depart, arrivee, date)
+    date = input("Entrer la date au format JJ/MM/AAAA : ")
+    #date = '18/02/2018'
+    aller_a_reservation(depart, arrivee, date, identifiant, date_naissance)
