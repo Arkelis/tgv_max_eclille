@@ -3,10 +3,12 @@ if name == "__main__":
 
 
 
-class Trajet():
+class Trajet:
     
 
-    def __init__(self,id_sncf=None ,id_bdd=None,gdep=None,garr=None,hdep=None,date=None,dur = None,option=None,nb=None):
+    def __init__(self, id_sncf = None, id_bdd = None, gdep = None,
+                 garr = None, hdep = None, date = None,
+                 dur = None, option = None, nb = None):
         self.id_train_sncf = id_sncf
         self.id_tj_bdd; = id_bdd
         self.g_dep= gdep
