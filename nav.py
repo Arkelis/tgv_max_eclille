@@ -3,12 +3,11 @@
 #    une suite de commandes. Il réserve manuellement en remplissant les    #
 #                              formulaires.                                #
 ############################################################################
-
-from splinter import Browser
-from autopy3 import mouse, key
-import time
-from win10toast import ToastNotifier
-import keyboard
+if name=="__main":
+    from splinter import Browser
+    from time import sleep
+    from win10toast import ToastNotifier
+    import keyboard
 
 executable_path = {'executable_path':'D:/Programmes/ChromeDriver/chromedriver.exe'}
 browser = Browser('chrome', **executable_path, headless = False)
@@ -33,7 +32,7 @@ browser.find_by_id("PASSENGER_1_train").click()
 browser.find_by_value("YOUNG").click()
 browser.find_by_id("PASSENGER_1_CARD").click()
 browser.find_by_id("PASSENGER_1_CARD--option-4").click()
-browser.find_by_id("PASSENGER_1_CARD-NUMBER-train").fill('300229341')
+browser.find_by_id("PASSENGER_1_CARD-NUMBER-train").fill('*********')
 keyboard.press_and_release('tab')
 keyboard.press('shift')
 keyboard.write('12041997')
