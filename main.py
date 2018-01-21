@@ -1,10 +1,10 @@
 from win10toast import ToastNotifier #A installer (pip)
 from splinter import Browser         #A installer (pip)
 from time import sleep
-from datetime import deltatime
+from datetime import timedelta
 import keyboard
 from gen_url import *
-from nav import *
+#from nav import *
 from trajet import *
 from bdd import *
 

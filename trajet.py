@@ -1,4 +1,4 @@
-if name == "__main__":
+if __name__ == "__main__":
     from splinter import Browser
 
 
@@ -9,7 +9,7 @@ class Trajet():
     def __init__(self,id_sncf=None ,id_bdd=None,gdep=None,garr=None,hdep=None,date=None,dur = None,option=None,nb=None):
         
         id_train_sncf = id_sncf
-        id_tj_bdd; = id_bdd
+        id_tj_bdd = id_bdd
         g_dep= gdep
         g_arr = garr
         d_dep = d
@@ -24,12 +24,12 @@ class Trajet():
         traj_lu = Trajet()
 
     def __str__(self):
-        print("Gare de départ : " + g_dep)
-        print("Gare d'arrivée : " + g_arr)
-        print("Heure de départ :" + h_dep)
-        print("Durée de trajet :" + duree)
+        print("\nGare de depart : " + g_dep)
+        print("Gare d'arrivee : " + g_arr)
+        print("Heure de depart :" + h_dep)
+        print("Duree de trajet :" + duree)
         print("Option de trajets :" + option_trajet)
-        print("Nb de places dispo :" +nb_places)
+        print("Nb de places dispo :" +nb_places+"\n")
     
 
 

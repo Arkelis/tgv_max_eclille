@@ -1,5 +1,5 @@
 
-if name=="__main__":
+if __name__=="__main__":
     from datetime import date, timedelta 
 
 rech={'VDEP':0,'VARR':1,'JDEP':2,'DIRTRAJ':3}
