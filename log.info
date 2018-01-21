@@ -15,7 +15,11 @@
 id_tgv_max : **********
 date_de_naissance : JJMMAAAA
 trajets : [("Lille","Paris"),
-		("Paris","Lille")]
+	   ("Paris","Lille"),
+           ("Paris", "Limoges")
+           ("Limoges", "Paris")
+           ("Lille", "Limoges")
+           ("Limoges", "Lille")]
 h_dep_pref : ["18h00"]
 [ENDLOG]
 
