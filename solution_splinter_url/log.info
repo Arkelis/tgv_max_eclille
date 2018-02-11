@@ -1,0 +1,25 @@
+## Fichier log.info : Regroupe toutes les données personnelles
+## Respecter le format suivant :
+## Les commentaires sollicitent une ligne entière et commencent par "##"
+## Les informations utiles sont regroupées dans une  forme analogue
+## aux dictionnaires. Exemple :
+## clef : string_value
+## Ou clef est la clef du dico et string_value est la chaine à traiter
+##
+## les dates sont au format JJMMAAAA
+##
+## les listes sont au format :
+## liste : [("Depart","Arrivee"),
+##	    ("dep","arr")]
+## Et finalement le fichier se termine par  [ENDLOG]
+id_tgv_max : **********
+date_de_naissance : JJMMAAAA
+trajets : [("Lille","Paris"),
+	   ("Paris","Lille"),
+           ("Paris", "Limoges")
+           ("Limoges", "Paris")
+           ("Lille", "Limoges")
+           ("Limoges", "Lille")]
+h_dep_pref : ["18h00"]
+[ENDLOG]
+

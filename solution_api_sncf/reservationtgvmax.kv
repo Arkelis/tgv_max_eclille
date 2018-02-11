@@ -1,0 +1,81 @@
+<CitySelector>:
+    BoxLayout:
+        Button:
+            text: "LIMOGES BENEDICTINS"
+            on_release: root.select_city("LIMOGES BENEDICTINS")
+        Button:
+            text: "PARIS (intramuros)"
+            on_release: root.select_city("PARIS (intramuros)")
+
+<DaySelector>:
+    BoxLayout:
+        Button:
+            text: "13"
+            on_release: root.select_day("13")
+        Button:
+            text: "20"
+            on_release: root.select_day("20")
+
+<MonthSelector>:
+    BoxLayout:
+        Button:
+            text: "01"
+            on_release: root.select_month("01")
+        Button:
+            text: "02"
+            on_release: root.select_month("02")
+
+<YearSelector>:
+    BoxLayout:
+        Button:
+            text: "2018"
+            on_release: root.select_year("2018")
+
+<MainMenu>:
+    TextInput:
+        id: txt_inpt
+        size_hint:(0.8,0.4)
+        pos_hint: {'center_x':0.5,'top':0.5}
+
+    Button:
+        id: origin
+        text: 'Origin'
+        font_size: 11
+        size_hint: (0.15,0.1)
+        pos_hint: {'center_x':0.17,'top':0.75}
+        on_release: root.load_CitySelector("departure")
+
+    Button:
+        id: destination
+        text: 'Destination'
+        font_size: 11
+        size_hint: (0.15,0.1)
+        pos_hint: {'center_x':0.33,'top':0.75}
+        on_release: root.load_CitySelector("arrival")
+    Button:
+        id: day
+        text: 'Day (date number)'
+        font_size: 11
+        size_hint: (0.15,0.1)
+        pos_hint: {'center_x':0.50,'top':0.75}
+        on_release: root.load_DaySelector()
+    Button:
+        id: month
+        text: 'Month (number)'
+        font_size: 11
+        size_hint: (0.15,0.1)
+        pos_hint: {'center_x':0.66,'top':0.75}
+        on_release: root.load_MonthSelector()
+    Button:
+        id: year
+        text: 'Year'
+        font_size: 11
+        size_hint: (0.15,0.1)
+        pos_hint: {'center_x':0.83,'top':0.75}
+        on_release: root.load_YearSelector()
+    Button:
+        text: "Search"
+        font_size: 12
+        size_hint: (0.15,0.1)
+        pos_hint: {'center_x':0.5,'top':0.62}
+        on_release: root.show_result()
