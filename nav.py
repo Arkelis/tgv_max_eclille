@@ -32,10 +32,10 @@ touchez à rien pendant jusqu'à la notification de fin.", "Python TGV", 49)
         notif.show_toast("Python TGV", "Vous avez annulé la procédure. Python\
                           va fermer")
         exit()
-    executable_path = {'executable_path': 'C:/Program Files (x86)/WebDriver/\
-            chromedriver.exe'}
-    # executable_path = {'executable_path':'D:/Programmes/ChromeDriver/chrome\
-    #        driver.exe'}
+    #executable_path = {'executable_path': 'C:/Program Files (x86)/WebDriver/\
+     #       chromedriver.exe'}
+    executable_path ={'executable_path':
+                      'D:/Programmes/ChromeDriver/chromedriver.exe'}
     browser = Browser('chrome', **executable_path, headless=False)
     # Début du script
 
