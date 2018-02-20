@@ -98,7 +98,8 @@ touchez à rien pendant jusqu'à la notification de fin.", "Python TGV", 49)
 # Tests
 if __name__ == '__main__':
     liste_gares = {'Paris': 'Paris (toutes gares intramuros)', 'Limoges':
-                   'Limoges Bénédictins', 'Lille': 'Lille (toutes gares)'}
+                   'Limoges Bénédictins', 'Lille': 'Lille (toutes gares)',
+                   'Nantes': 'Nantes (toutes gares)'}
 
     identifiant = input("Entrez votre identifiant TGVmax : ")
 
@@ -106,8 +107,8 @@ if __name__ == '__main__':
                            + " sans slash ! ")
     depart = ''
     while depart not in liste_gares:
-        depart = input("Entrer la ville de départ parmi Paris, Limoges, " +
-                       "Lille : ")
+        depart = input("Entrer la ville de départ parmi {} (sans guillemets) : "
+                       .format([clé for clé in liste_gares]))
     depart = liste_gares[depart]
 
     arrivee = ''

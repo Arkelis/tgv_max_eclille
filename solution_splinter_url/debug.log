@@ -1,0 +1,3 @@
+[0220/192354.166:ERROR:process_reader_win.cc(123)] NtOpenThread: {Accès refusé} Un processus a demandé l’accès a un objet, mais il ne bénéficie pas des autorisations nécessaires. (0xc0000022)
+[0220/192354.184:ERROR:exception_snapshot_win.cc(88)] thread ID 12072 not found in process
+[0220/192354.184:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed
